@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(68, 68, 68) !important;
+}
+
+header{
+    text-align: center;
+    color: orangered;
+}
+
+#timer {
+   
+
+}
+
+#container{
+    background-color: rgb(255, 166, 0);
+    width: 960px;
+    position: absolute;
+    left: 20%;
+    margin: 0px;
+    padding: 25px;
+}
