@@ -10,7 +10,7 @@ window.onload = function () {
 var intervalId;
 var clockRunning = false;
 var stopwatch = {
-    time: 120,
+    time: 60,
 
     
 
@@ -25,10 +25,21 @@ var stopwatch = {
     count: function () {
         stopwatch.time--;
 
+        if (stopwatch.time === -1){
+            clearInterval(intervalId);
+            clockRunning = false;
+            $('.correct').html('<p><h6> This is your score! ' + rightNum + '/6</h6></p>');
+            $('.answer').css('background-color', 'orangered');
+    
+        }
+        else{
+
         var converted = stopwatch.timeConverter(stopwatch.time);
         console.log(converted);
 
         $('#timer').html('<h1>' + converted + '</h1>');
+        }
+        
     },
 
     timeConverter: function (t) {
@@ -47,7 +58,40 @@ var stopwatch = {
         }
 
         return minutes + ':' + seconds;
+
+        
     }
 
+
    
+
 };
+
+
+
+
+
+var rightNum = 0;
+
+$('.answer').on('click', function(){
+        rightNum++;
+        console.log(rightNum);
+});
+
+$('.wrong').on('click', function(){
+    alert('ive been clicked!')
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
