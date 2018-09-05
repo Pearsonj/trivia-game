@@ -12,7 +12,7 @@ var clockRunning = false;
 var stopwatch = {
     time: 60,
 
-    
+
 
     start: function () {
 
@@ -25,21 +25,19 @@ var stopwatch = {
     count: function () {
         stopwatch.time--;
 
-        if (stopwatch.time === -1){
+        if (stopwatch.time === -1) {
             clearInterval(intervalId);
             clockRunning = false;
             $('.correct').html('<p><h6> This is your score! ' + rightNum + '/6</h6></p>');
             $('.answer').css('background-color', 'orangered');
-    
-        }
-        else{
+        } else {
 
-        var converted = stopwatch.timeConverter(stopwatch.time);
-        console.log(converted);
+            var converted = stopwatch.timeConverter(stopwatch.time);
+            console.log(converted);
 
-        $('#timer').html('<h1>' + converted + '</h1>');
+            $('#timer').html('<h1>' + converted + '</h1>');
         }
-        
+
     },
 
     timeConverter: function (t) {
@@ -52,18 +50,17 @@ var stopwatch = {
 
         if (minutes === 0) {
             minutes = '00'
-        } 
-        else if (minutes < 10) {
+        } else if (minutes < 10) {
             munites = '0' + minutes;
         }
 
         return minutes + ':' + seconds;
 
-        
+
     }
 
 
-   
+
 
 };
 
@@ -73,25 +70,11 @@ var stopwatch = {
 
 var rightNum = 0;
 
-$('.answer').on('click', function(){
-        rightNum++;
-        console.log(rightNum);
+$('.answer').on('click', function () {
+    rightNum++;
+    console.log(rightNum);
 });
 
-$('.wrong').on('click', function(){
-    alert('ive been clicked!')
+$('.wrong').on('click', function () {
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
