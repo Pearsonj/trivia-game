@@ -8,8 +8,14 @@ header{
 }
 
 #timer {
-   
+}
 
+li:hover {
+    background-color: lightgray;
+}
+
+li:active {
+    background-color: orangered;
 }
 
 #container{
@@ -22,8 +28,9 @@ header{
 }
 
 .btn {
-    position: relative;
-left: 42%;
-margin-top: 30px;
+position: relative;
+left: 0%;
+margin: 0;
+padding: 0;
     
 }
