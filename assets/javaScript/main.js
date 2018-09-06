@@ -70,11 +70,16 @@ var stopwatch = {
 
 var rightNum = 0;
 
+
 $('.answer').on('click', function () {
     rightNum++;
     console.log(rightNum);
+   
+    
+    
 });
 
 $('.wrong').on('click', function () {
+    
 
 });
