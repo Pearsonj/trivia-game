@@ -10,7 +10,7 @@ window.onload = function () {
 var intervalId;
 var clockRunning = false;
 var stopwatch = {
-    time: 60,
+    time: 30,
 
 
 
@@ -29,7 +29,25 @@ var stopwatch = {
             clearInterval(intervalId);
             clockRunning = false;
             $('.correct').html('<p><h6> This is your score! ' + rightNum + '/6</h6></p>');
-            $('.answer').css('background-color', 'orangered');
+            $('.answer1').show();
+            $('.wrong1').show();
+            $('.answer2').show();
+            $('.wrong2').show();
+            $('.answer3').show();
+            $('.wrong3').show();
+            $('.answer4').show();
+            $('.wrong4').show();
+            $('.answer5').show();
+            $('.wrong5').show();
+            $('.answer6').show();
+            $('.wrong6').show();
+            $('.answer1').css('background-color', 'orangered');
+            $('.answer2').css('background-color', 'orangered');
+            $('.answer3').css('background-color', 'orangered');
+            $('.answer4').css('background-color', 'orangered');
+            $('.answer5').css('background-color', 'orangered');
+            $('.answer6').css('background-color', 'orangered');
+
         } else {
 
             var converted = stopwatch.timeConverter(stopwatch.time);
@@ -49,12 +67,12 @@ var stopwatch = {
         }
 
         if (minutes === 0) {
-            minutes = '00'
+            minutes = ''
         } else if (minutes < 10) {
-            munites = '0' + minutes;
+            munites = minutes;
         }
 
-        return minutes + ':' + seconds;
+        return minutes + '' + seconds;
 
 
     }
@@ -64,22 +82,77 @@ var stopwatch = {
 
 };
 
-
-
-
-
 var rightNum = 0;
 
 
-$('.answer').on('click', function () {
+$('.answer1').on('click', function () {
     rightNum++;
+    $('.wrong1').hide();
+    $('.answer1').hide();
     console.log(rightNum);
-   
-    
-    
 });
 
-$('.wrong').on('click', function () {
-    
+$('.answer2').on('click', function () {
+    rightNum++;
+    $('.wrong2').hide();
+    $('.answer2').hide();
+    console.log(rightNum);
+});
 
+$('.answer3').on('click', function () {
+    rightNum++;
+    $('.wrong3').hide();
+    $('.answer3').hide();
+    console.log(rightNum);
+});
+
+$('.answer4').on('click', function () {
+    rightNum++;
+    $('.wrong4').hide();
+    $('.answer4').hide();
+    console.log(rightNum);
+});
+
+$('.answer5').on('click', function () {
+    rightNum++;
+    $('.wrong5').hide();
+    $('.answer5').hide();
+    console.log(rightNum);
+});
+
+$('.answer6').on('click', function () {
+    rightNum++;
+    $('.wrong6').hide();
+    $('.answer6').hide();
+    console.log(rightNum);
+});
+
+$('.wrong1').on('click', function () {
+    $('.answer1').hide();
+    $('.wrong1').hide();
+});
+
+$('.wrong2').on('click', function () {
+    $('.wrong2').hide();
+    $('.answer2').hide();
+});
+
+$('.wrong3').on('click', function () {
+    $('.wrong3').hide();
+    $('.answer3').hide();
+});
+
+$('.wrong4').on('click', function () {
+    $('.wrong4').hide();
+    $('.answer4').hide();
+});
+
+$('.wrong5').on('click', function () {
+    $('.wrong5').hide();
+    $('.answer5').hide();
+});
+
+$('.wrong6').on('click', function () {
+    $('.wrong6').hide();
+    $('.answer6').hide();
 });
